@@ -4,6 +4,7 @@ import com.beastrobotics.robot.Drive.*;
 import com.beastrobotics.robot.controllers.*;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * The VM is configured to automatically run this class, and to call the

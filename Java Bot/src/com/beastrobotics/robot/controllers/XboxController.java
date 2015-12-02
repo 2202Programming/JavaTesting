@@ -8,8 +8,8 @@ import edu.wpi.first.wpilibj.Timer;
 
 public class XboxController implements IControl {
 
-	private final int DEBOUNCE_COUNT_LIMIT = 15;
 	private final double REAL_TIME_BETWEEN_UPDATES = 0.05;
+	private final int DEBOUNCE_COUNT_LIMIT = 15;
 	private final int BUTTON_A = 1;
 	private final int BUTTON_B = 2;
 	private final int BUTTON_X = 3;
@@ -112,14 +112,11 @@ public class XboxController implements IControl {
 	public static XboxController getInstance(int port) {
 		if (port == 0) {
 			if (Xbox == null)
-				Xbox = new XboxController(0); // this is the first time
-												// getInstance is called
+				Xbox = new XboxController(0); 
 			return Xbox;
 		} else {
 			if (Xbox2 == null)
-				Xbox2 = new XboxController(port); // this is the first time
-													// getInstance is called for
-													// this port
+				Xbox2 = new XboxController(port);
 			return Xbox2;
 		}
 	}

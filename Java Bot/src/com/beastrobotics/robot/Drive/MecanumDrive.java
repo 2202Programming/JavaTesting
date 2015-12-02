@@ -38,5 +38,6 @@ public class MecanumDrive extends Drive implements IControl {
 		twist = stickTwist.x();
 		
 		robot.mecanumDrive_Cartesian(x, y, twist, 0);
+		dashboard(x, y, twist);
 	}
 }
