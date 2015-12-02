@@ -1,44 +1,22 @@
 package com.beastrobotics.robot.Drive;
 
-import com.beastrobotics.robot.controllers.JoystickClipper;
-import com.beastrobotics.robot.controllers.XboxController;
+import com.beastrobotics.robot.IControl;
 
-import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.RobotDrive;
-import edu.wpi.first.wpilibj.Talon;
-
-public class ArcadeDrive {
-
-	private XboxController xbox;
-	private RobotDrive robot;
-	private Talon talonFR, talonRR, talonFL, talonRL;
+public class ArcadeDrive extends Drive implements IControl {
 	
-	private final static int frontRightChannel = 1; // For TIM
-	private final static int rearRightChannel = 2;
-	private final static int frontLeftChannel = 3;
-	private final static int rearLeftChannel = 4;
-	
-	JoystickClipper stickX, stickY;
-	
-	private double x;
-	private double y;
+	private double x, y;
 	
 	public ArcadeDrive() {
-		talonFR = new Talon(frontRightChannel);
-		talonRR = new Talon(rearRightChannel);
-		talonFL = new Talon(frontLeftChannel);
-		talonRL = new Talon(rearLeftChannel);
-
-		stickX = new JoystickClipper();
-		stickY = new JoystickClipper();
-				
+		super();
 		x = 0.0;
 		y = 0.0;
-		
-		robot = new RobotDrive(talonFL, talonRL, talonFR, talonRR);
-		robot.setExpiration(0.1);
-		xbox = XboxController.getInstance(1);
 	}
+	
+	public void robotInit() {}
+
+	public void autonomousInit() {}
+
+	public void autonomousPeriodic() {}
 	
 	public void teleopInit() {
 		robot.setSafetyEnabled(false);
@@ -53,5 +31,6 @@ public class ArcadeDrive {
 		
 		robot.arcadeDrive(x, y);
 	}
+
 } 
 

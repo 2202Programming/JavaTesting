@@ -1,0 +1,20 @@
+package com.beastrobotics.robot.Drive;
+
+import com.beastrobotics.robot.controllers.XboxController;
+
+import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.Talon;
+
+public class Drive {
+
+
+	protected XboxController xbox;
+	protected RobotDrive robot;
+	protected Talon talonFR, talonRR, talonFL, talonRL;
+	
+	protected final static int frontRightChannel = 1; // For TIM
+	protected final static int rearRightChannel = 2;
+	protected final static int frontLeftChannel = 3;
+	protected final static int rearLeftChannel = 4;
+	
+}

@@ -1,0 +1,17 @@
+package com.beastrobotics.robot.Drive;
+
+import com.beastrobotics.robot.IControl;
+
+public class MecanumDrive implements IControl {
+
+	 
+	public void robotInit() {}
+ 
+	public void autonomousInit() {}
+	
+	public void autonomousPeriodic() {}
+
+	public void teleopInit() {}
+ 
+	public void teleopPeriodic() {}
+}

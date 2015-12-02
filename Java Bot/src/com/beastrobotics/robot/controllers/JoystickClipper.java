@@ -47,7 +47,7 @@ public class JoystickClipper {
 		minLength = value;
 	}
 
-	void update(double x, double y) {
+	public void update(double x, double y) {
 		double vectorLength = Math.sqrt(x * x + y * y);
 		if (vectorLength <= deadband) {
 			xValue = 0;

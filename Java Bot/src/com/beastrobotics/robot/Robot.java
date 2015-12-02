@@ -1,5 +1,7 @@
-
 package com.beastrobotics.robot;
+
+import com.beastrobotics.robot.Drive.*;
+import com.beastrobotics.robot.controllers.*;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 
@@ -11,33 +13,45 @@ import edu.wpi.first.wpilibj.IterativeRobot;
  * directory.
  */
 public class Robot extends IterativeRobot {
+	
+	private IControl[] controllers;
+	
+	private final int numControllers = 2;
+	
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
     public void robotInit() {
 
+    	controllers = new IControl[numControllers];
+    	controllers[0] = XboxController.getInstance(0);
+    	controllers[1] = new ArcadeDrive();
+    	//controllers[1] = new MecanumDrive();
     }
     
     /**
      * This function is called periodically during autonomous
      */
-    public void autonomousPeriodic() {
+    public void autonomousPeriodic() {}
 
+    public void teleopInit() {
+    	for (IControl x: controllers) {
+    		x.teleopInit();
+    	}
     }
-
+    
     /**
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
-        
+        for (IControl x: controllers) {
+        	x.teleopPeriodic();
+        }
     }
     
     /**
      * This function is called periodically during test mode
      */
-    public void testPeriodic() {
-    
-    }
-    
+    public void testPeriodic() {}   
 }
