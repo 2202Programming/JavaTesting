@@ -1,0 +1,2 @@
+INDEX VERSION 1.127+/Users/danielowen/Documents/Code/Robotics/Java_Test/JavaTesting/.metadata/.plugins/org.eclipse.jdt.core
+2993622229.index
